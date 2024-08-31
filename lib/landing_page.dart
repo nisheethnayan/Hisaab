@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:hisaab/notes.dart';
+import 'package:hisaab/hisaab.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});

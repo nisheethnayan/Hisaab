@@ -1,0 +1,5 @@
+<!-- res/drawable-night/ic_launcher.xml -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background" /> <!-- or use @drawable/background_dark if you have an image -->
+    <foreground android:drawable="@drawable/icon_dark" />
+</adaptive-icon>

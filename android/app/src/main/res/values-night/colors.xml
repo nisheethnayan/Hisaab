@@ -1,0 +1,4 @@
+<!-- res/values-night/colors-night.xml -->
+<resources>
+    <color name="ic_launcher_background">#295F98</color>
+</resources>
