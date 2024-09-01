@@ -28,6 +28,8 @@ class ThemeNotifier extends ChangeNotifier {
         colorScheme: const ColorScheme.light(
           primary: Color.fromRGBO(234, 228, 221, 1),
           secondary: Color.fromRGBO(41, 95, 152, 1),
+          onPrimary: Colors.white,
+          onSecondary: Colors.black,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -36,6 +38,7 @@ class ThemeNotifier extends ChangeNotifier {
             textStyle: const TextStyle(
               fontFamily: 'Lalezar',
               fontSize: 24.0,
+              color: Colors.white,
             ),
             shape: RoundedRectangleBorder(
               borderRadius:
@@ -90,6 +93,8 @@ class ThemeNotifier extends ChangeNotifier {
         colorScheme: const ColorScheme.dark(
           primary: Color.fromRGBO(41, 95, 152, 1),
           secondary: Color.fromRGBO(234, 228, 221, 1),
+          onPrimary: Colors.black,
+          onSecondary: Colors.white,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -98,6 +103,7 @@ class ThemeNotifier extends ChangeNotifier {
             textStyle: const TextStyle(
               fontFamily: 'Lalezar',
               fontSize: 24.0,
+              color: Colors.black,
             ),
             shape: RoundedRectangleBorder(
               borderRadius:

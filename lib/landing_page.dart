@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:hisaab/hisaab.dart';
+import 'package:hisaab/home.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -41,7 +41,7 @@ class _LandingPageState extends State<LandingPage> {
     Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const Notes(),
+          builder: (context) => const Home(),
         ));
   }
 
@@ -168,7 +168,7 @@ class _LandingPageState extends State<LandingPage> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const Notes(),
+                                                  const Home(),
                                             ));
                                       },
                                       child: const Text('Sign Up'),

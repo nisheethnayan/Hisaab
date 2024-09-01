@@ -18,6 +18,27 @@ Future<void> launchURL(String url) async {
   }
 }
 
+bool lightIsActive = false;
+bool darkIsActive = false;
+bool systemIsActive = false;
+
+void setActive(context, ThemeMode mode) {
+  Provider.of<ThemeNotifier>(context, listen: false).setThemeMode(mode);
+  if (mode == ThemeMode.light) {
+    lightIsActive = true;
+    darkIsActive = false;
+    systemIsActive = false;
+  } else if (mode == ThemeMode.dark) {
+    lightIsActive = false;
+    darkIsActive = true;
+    systemIsActive = false;
+  } else {
+    lightIsActive = false;
+    darkIsActive = false;
+    systemIsActive = true;
+  }
+}
+
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
@@ -136,11 +157,14 @@ class _ProfileState extends State<Profile> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            // Toggle between light, dark, and system modes
-                            Provider.of<ThemeNotifier>(context, listen: false)
-                                .setThemeMode(ThemeMode.light);
+                            setActive(context, ThemeMode.light);
                           },
-                          child: const Icon(Icons.light_mode_rounded),
+                          child: lightIsActive
+                              ? Icon(
+                                  Icons.check_circle_outline_rounded,
+                                  color: Colors.white,
+                                )
+                              : Icon(Icons.light_mode_rounded),
                         ),
                       ],
                     ),
@@ -156,10 +180,14 @@ class _ProfileState extends State<Profile> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            Provider.of<ThemeNotifier>(context, listen: false)
-                                .setThemeMode(ThemeMode.dark);
+                            setActive(context, ThemeMode.dark);
                           },
-                          child: const Icon(Icons.dark_mode_rounded),
+                          child: darkIsActive
+                              ? Icon(
+                                  Icons.check_circle_outlined,
+                                  color: Color.fromRGBO(41, 95, 152, 1),
+                                )
+                              : Icon(Icons.dark_mode_rounded),
                         ),
                       ],
                     ),
@@ -176,10 +204,11 @@ class _ProfileState extends State<Profile> {
                         ElevatedButton(
                           style: Theme.of(context).elevatedButtonTheme.style,
                           onPressed: () {
-                            Provider.of<ThemeNotifier>(context, listen: false)
-                                .setThemeMode(ThemeMode.system);
+                            setActive(context, ThemeMode.system);
                           },
-                          child: const Icon(Icons.color_lens_rounded),
+                          child: systemIsActive
+                              ? Icon(Icons.check_circle_outlined)
+                              : Icon(Icons.color_lens_rounded),
                         ),
                       ],
                     ),
@@ -230,29 +259,53 @@ class _ProfileState extends State<Profile> {
                                         Theme.of(context).colorScheme.secondary,
                                   ),
                                 ),
-                                Image.asset(
-                                  "assets/images/github.png",
-                                  width: 50,
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
+                                GestureDetector(
+                                  onTap: () async {
+                                    launchURL(
+                                        'https://github.com/nisheethnayan');
+                                  },
+                                  child: Image.asset(
+                                    "assets/images/github.png",
+                                    width: 50,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
                                 ),
-                                Image.asset(
-                                  "assets/images/threads.png",
-                                  width: 48,
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
+                                GestureDetector(
+                                  onTap: () async {
+                                    launchURL(
+                                        'https://threads.net/@nisheeth_nayan');
+                                  },
+                                  child: Image.asset(
+                                    "assets/images/threads.png",
+                                    width: 48,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
                                 ),
-                                Image.asset(
-                                  "assets/images/snapchat.png",
-                                  width: 48,
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
+                                GestureDetector(
+                                  onTap: () async {
+                                    launchURL(
+                                        'https://snapchat.com/add/nisheethnayan');
+                                  },
+                                  child: Image.asset(
+                                    "assets/images/snapchat.png",
+                                    width: 48,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
                                 ),
-                                Image.asset(
-                                  "assets/images/x.png",
-                                  width: 48,
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
+                                GestureDetector(
+                                  onTap: () async {
+                                    launchURL(
+                                        'https://twitter.com/NisheethNayan');
+                                  },
+                                  child: Image.asset(
+                                    "assets/images/x.png",
+                                    width: 48,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
                                 ),
                               ],
                             ),
