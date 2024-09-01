@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hisaab/main.dart';
+import 'package:hisaab/profile_comps/credits_card.dart';
+import 'package:hisaab/profile_comps/profile_header.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();
-}
-
-Future<void> launchURL(String url) async {
-  final Uri uri = Uri.parse(url);
-
-  if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-    throw Exception('Could not launch $uri');
-  }
 }
 
 bool lightIsActive = false;
@@ -54,34 +47,7 @@ class _ProfileState extends State<Profile> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Profile',
-                              style: Theme.of(context).textTheme.displayMedium,
-                            ),
-                            Text(
-                              '& Settings',
-                              style: Theme.of(context).textTheme.displayMedium,
-                            ),
-                          ],
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Image.asset(
-                            "assets/images/arrow.png",
-                            width: 48,
-                            color: Theme.of(context).colorScheme.secondary,
-                          ),
-                        )
-                      ],
-                    ),
+                    ProfileHeader(),
                     const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -215,104 +181,7 @@ class _ProfileState extends State<Profile> {
                     SizedBox(
                       height: 160,
                     ),
-                    Card(
-                      elevation: 0,
-                      color: Theme.of(context).colorScheme.primary,
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Theme.of(context).primaryColorDark,
-                            width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(4)),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(16),
-                        child: Column(
-                          children: [
-                            Center(
-                              child: Text(
-                                'NISHEETH NAYAN',
-                                style:
-                                    Theme.of(context).textTheme.displayMedium,
-                              ),
-                            ),
-                            Center(
-                              child: Text(
-                                'ko follow bhi karle bhai ab',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                GestureDetector(
-                                  onTap: () async {
-                                    await launchURL(
-                                        'https://instagram.com/nisheeth_nayan');
-                                  },
-                                  child: Image.asset(
-                                    "assets/images/instagram.png",
-                                    width: 48,
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () async {
-                                    launchURL(
-                                        'https://github.com/nisheethnayan');
-                                  },
-                                  child: Image.asset(
-                                    "assets/images/github.png",
-                                    width: 50,
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () async {
-                                    launchURL(
-                                        'https://threads.net/@nisheeth_nayan');
-                                  },
-                                  child: Image.asset(
-                                    "assets/images/threads.png",
-                                    width: 48,
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () async {
-                                    launchURL(
-                                        'https://snapchat.com/add/nisheethnayan');
-                                  },
-                                  child: Image.asset(
-                                    "assets/images/snapchat.png",
-                                    width: 48,
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () async {
-                                    launchURL(
-                                        'https://twitter.com/NisheethNayan');
-                                  },
-                                  child: Image.asset(
-                                    "assets/images/x.png",
-                                    width: 48,
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    CreditsCard(),
                   ],
                 ),
               ),
