@@ -47,7 +47,7 @@ class ThemeNotifier extends ChangeNotifier {
           ),
         ),
         scaffoldBackgroundColor: const Color.fromRGBO(234, 228, 221, 1),
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           displayLarge: TextStyle(
             fontSize: 40.0,
             fontWeight: FontWeight.bold,
@@ -89,7 +89,7 @@ class ThemeNotifier extends ChangeNotifier {
         fontFamily: 'Dongle',
         brightness: Brightness.dark,
         primaryColor: const Color.fromRGBO(41, 95, 152, 1),
-        primaryColorDark: const Color.fromRGBO(234, 228, 221, 1),
+        primaryColorDark: const Color.fromRGBO(25, 39, 52, 1),
         colorScheme: const ColorScheme.dark(
           primary: Color.fromRGBO(41, 95, 152, 1),
           secondary: Color.fromRGBO(234, 228, 221, 1),
@@ -98,7 +98,7 @@ class ThemeNotifier extends ChangeNotifier {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromRGBO(234, 228, 221, 1),
+            backgroundColor: const Color.fromRGBO(25, 39, 52, 1),
             foregroundColor: Color.fromRGBO(41, 95, 152, 1),
             textStyle: const TextStyle(
               fontFamily: 'Lalezar',
@@ -106,13 +106,12 @@ class ThemeNotifier extends ChangeNotifier {
               color: Colors.black,
             ),
             shape: RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.circular(12.0), // Change the border radius here
+              borderRadius: BorderRadius.circular(12.0),
             ),
           ),
         ),
         scaffoldBackgroundColor: const Color.fromRGBO(41, 95, 152, 1),
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           displayLarge: TextStyle(
             fontSize: 40.0,
             fontWeight: FontWeight.bold,
@@ -127,7 +126,7 @@ class ThemeNotifier extends ChangeNotifier {
           displaySmall: TextStyle(
             fontSize: 24.0,
             fontFamily: 'Dongle',
-            color: Colors.black,
+            color: Colors.white,
           ),
           bodyLarge: TextStyle(
             fontSize: 32.0,

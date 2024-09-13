@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hisaab/hisaab_page.dart';
-import 'package:hisaab/vichaar_page.dart';
+import 'package:hisaab/hisaab_comps/hisaab_page.dart';
+import 'package:hisaab/vichaar_comps/vichaar_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

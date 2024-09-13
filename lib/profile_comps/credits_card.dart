@@ -23,7 +23,8 @@ class _CreditsCardState extends State<CreditsCard> {
       elevation: 0,
       color: Theme.of(context).colorScheme.primary,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: Theme.of(context).primaryColorDark, width: 2),
+        side: BorderSide(
+            color: Theme.of(context).colorScheme.secondary, width: 2),
         borderRadius: BorderRadius.all(Radius.circular(4)),
       ),
       child: Padding(

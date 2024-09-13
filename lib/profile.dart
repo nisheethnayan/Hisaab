@@ -66,19 +66,6 @@ class _ProfileState extends State<Profile> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Password",
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                        Text(
-                          'hash lega?',
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
                           "Kitne Hisaab?",
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
@@ -122,6 +109,9 @@ class _ProfileState extends State<Profile> {
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Theme.of(context).colorScheme.onSecondary),
                           onPressed: () {
                             setActive(context, ThemeMode.light);
                           },
@@ -145,6 +135,9 @@ class _ProfileState extends State<Profile> {
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Theme.of(context).colorScheme.onSecondary),
                           onPressed: () {
                             setActive(context, ThemeMode.dark);
                           },
@@ -168,7 +161,9 @@ class _ProfileState extends State<Profile> {
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                         ElevatedButton(
-                          style: Theme.of(context).elevatedButtonTheme.style,
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Theme.of(context).colorScheme.onSecondary),
                           onPressed: () {
                             setActive(context, ThemeMode.system);
                           },

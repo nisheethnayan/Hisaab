@@ -13,47 +13,92 @@ class _AddHisaabCardState extends State<AddHisaabCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).colorScheme.secondary,
+      elevation: 6,
+      color: Theme.of(context).primaryColorDark,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Kya kiya',
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            child: Card(
+              margin: EdgeInsets.all(0),
+              color: Color.fromRGBO(3, 4, 14, 0.4),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Kya kiya',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Row(
+                      children: [
+                        InkWell(
+                            child: Text(
+                          "Diya",
+                          style: TextStyle(
+                              color: Colors.white, fontFamily: 'Lalezar'),
+                        )),
+                        SizedBox(
+                          width: 16,
+                        ),
+                        InkWell(
+                            child: Card(
+                          child: Text(
+                            "Liya",
+                            style: TextStyle(
+                                color: Colors.white, fontFamily: 'Lalezar'),
+                          ),
+                        )),
+                      ],
+                    )
+                  ],
                 ),
-                SizedBox(width: 180, child: Text('data'))
-              ],
+              ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Kisse kiya',
+          const Padding(
+            padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+            child: Card(
+              margin: EdgeInsets.all(0),
+              color: Color.fromRGBO(3, 4, 14, 0.4),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Kisse kiya',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(width: 140, child: TextField())
+                  ],
                 ),
-                SizedBox(width: 160, child: TextField())
-              ],
+              ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Kitna kiya',
+          const Padding(
+            padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+            child: Card(
+              margin: EdgeInsets.all(0),
+              color: Color.fromRGBO(3, 4, 14, 0.4),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Kitna kiya',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(width: 120, child: TextField())
+                  ],
                 ),
-                SizedBox(width: 120, child: TextField())
-              ],
+              ),
             ),
           ),
           Padding(
@@ -64,11 +109,11 @@ class _AddHisaabCardState extends State<AddHisaabCard> {
               children: [
                 Icon(
                   Icons.expand_more_rounded,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
                 Icon(
                   Icons.add,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
               ],
             ),

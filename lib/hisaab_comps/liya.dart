@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hisaab/hisaab_comps/hisaab_card.dart';
+import 'package:hisaab/hisaab_comps/total_hisaab.dart';
 
 class Liya extends StatefulWidget {
   const Liya({super.key});
@@ -10,22 +12,27 @@ class Liya extends StatefulWidget {
 class _LiyaState extends State<Liya> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            height: 20,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(children: [
+        Expanded(
+          child: ListView(
+            physics: BouncingScrollPhysics(),
+            children: [
+              HisaabCard(
+                name: "Keshav",
+                amount: 120,
+              ),
+              HisaabCard(name: "Samar", amount: 240),
+              HisaabCard(name: "Satya", amount: 35),
+              HisaabCard(name: "Pradeep", amount: 120),
+              HisaabCard(name: "Aman", amount: 7000),
+              HisaabCard(name: "Samar", amount: 50),
+            ],
           ),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-          Text("data"),
-        ],
-      ),
+        ),
+        TotalHisaab(total: 11200),
+      ]),
     );
   }
 }

@@ -80,7 +80,7 @@ class _LandingPageState extends State<LandingPage> {
                     const SizedBox(height: 80),
                     Card(
                       elevation: 6,
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorDark,
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
@@ -139,44 +139,185 @@ class _LandingPageState extends State<LandingPage> {
                         style: Theme.of(context).elevatedButtonTheme.style,
                         onPressed: toggleExpansionSignup,
                         child: isExpandedSignup
-                            ? SingleChildScrollView(
-                                child: Column(
+                            ? Expanded(
+                                child: ListView(
                                   children: [
+                                    SizedBox(
+                                      height: 25,
+                                    ),
                                     TextField(
                                       autofocus: true,
-                                      decoration: InputDecoration(
-                                        hintText: 'Name',
+                                      maxLines: 1,
+                                      expands: false,
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        height: 1,
+                                        color: Colors.white,
+                                        decorationThickness: 0,
                                       ),
+                                      decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.symmetric(
+                                              vertical: 12, horizontal: 16),
+                                          filled: true,
+                                          fillColor:
+                                              Color.fromRGBO(3, 4, 14, 0.5),
+                                          border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                              borderSide: BorderSide.none),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          hintText: 'Username...',
+                                          hintStyle: TextStyle(
+                                            fontSize: 24.0,
+                                            fontFamily: 'Dongle',
+                                            color: Colors.grey.shade300,
+                                          ),
+                                          hintFadeDuration: Durations.medium2),
                                     ),
                                     const SizedBox(height: 10),
                                     TextField(
-                                      decoration: InputDecoration(
-                                        hintText: 'Email',
-                                      ),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    TextField(
-                                      decoration: InputDecoration(
-                                        hintText: 'Password',
-                                      ),
+                                      maxLines: 1,
+                                      expands: false,
                                       obscureText: true,
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        height: 1,
+                                        color: Colors.white,
+                                        decorationThickness: 0,
+                                      ),
+                                      decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.symmetric(
+                                              vertical: 12, horizontal: 16),
+                                          filled: true,
+                                          fillColor:
+                                              Color.fromRGBO(3, 4, 14, 0.5),
+                                          border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                              borderSide: BorderSide.none),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          hintText: 'Password...',
+                                          hintStyle: TextStyle(
+                                            fontSize: 24.0,
+                                            fontFamily: 'Dongle',
+                                            color: Colors.grey.shade300,
+                                          ),
+                                          hintFadeDuration: Durations.medium2),
+                                    ),
+                                    const SizedBox(height: 10),
+                                    TextField(
+                                      autofocus: true,
+                                      maxLines: 1,
+                                      expands: false,
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        height: 1,
+                                        color: Colors.white,
+                                        decorationThickness: 0,
+                                      ),
+                                      decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.symmetric(
+                                              vertical: 12, horizontal: 16),
+                                          filled: true,
+                                          fillColor:
+                                              Color.fromRGBO(3, 4, 14, 0.5),
+                                          border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                              borderSide: BorderSide.none),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          hintText: 'E-mail...',
+                                          hintStyle: TextStyle(
+                                            fontSize: 24.0,
+                                            fontFamily: 'Dongle',
+                                            color: Colors.grey.shade300,
+                                          ),
+                                          hintFadeDuration: Durations.medium2),
                                     ),
                                     const SizedBox(height: 20),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const Home(),
-                                            ));
-                                      },
-                                      child: const Text('Sign Up'),
-                                    ),
+                                    GestureDetector(
+                                        onTap: _onSignUp,
+                                        child: Center(
+                                            child: const Text(
+                                          'Sign Up',
+                                          style: TextStyle(
+                                            color: Color.fromRGBO(
+                                                234, 228, 221, 1),
+                                          ),
+                                        ))),
                                   ],
                                 ),
                               )
-                            : const Text('Sign Up'),
+                            : Text(
+                                'Sign Up',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .displayMedium
+                                    ?.copyWith(
+                                      fontSize: 24,
+                                      color: Color.fromRGBO(234, 228, 221, 1),
+                                    ),
+                              ),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -196,28 +337,126 @@ class _LandingPageState extends State<LandingPage> {
                                   children: [
                                     TextField(
                                       autofocus: true,
-                                      decoration: InputDecoration(
-                                        hintText: 'Name',
+                                      maxLines: 1,
+                                      expands: false,
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        height: 1,
+                                        color: Colors.white,
+                                        decorationThickness: 0,
                                       ),
+                                      decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.symmetric(
+                                              vertical: 12, horizontal: 16),
+                                          filled: true,
+                                          fillColor:
+                                              Color.fromRGBO(3, 4, 14, 0.5),
+                                          border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                              borderSide: BorderSide.none),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          hintText: 'Username...',
+                                          hintStyle: TextStyle(
+                                            fontSize: 24.0,
+                                            fontFamily: 'Dongle',
+                                            color: Colors.grey.shade300,
+                                          ),
+                                          hintFadeDuration: Durations.medium2),
                                     ),
                                     const SizedBox(height: 10),
                                     TextField(
-                                      decoration: InputDecoration(
-                                        hintText: 'Password',
-                                      ),
                                       obscureText: true,
+                                      maxLines: 1,
+                                      expands: false,
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        height: 1,
+                                        color: Colors.white,
+                                        decorationThickness: 0,
+                                      ),
+                                      decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.symmetric(
+                                              vertical: 12, horizontal: 16),
+                                          filled: true,
+                                          fillColor:
+                                              Color.fromRGBO(3, 4, 14, 0.5),
+                                          border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                              borderSide: BorderSide.none),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          hintText: 'Password...',
+                                          hintStyle: TextStyle(
+                                            fontSize: 24.0,
+                                            fontFamily: 'Dongle',
+                                            color: Colors.grey.shade300,
+                                          ),
+                                          hintFadeDuration: Durations.medium2),
                                     ),
                                     const SizedBox(height: 20),
-                                    ElevatedButton(
-                                      onPressed: () {
+                                    GestureDetector(
+                                      onTap: () {
                                         _onSignUp;
                                       },
-                                      child: const Text('Log In'),
+                                      child: Text('Log In',
+                                          style: TextStyle(
+                                              color: Color.fromRGBO(
+                                                  234, 228, 221, 1))),
                                     ),
                                   ],
                                 ),
                               )
-                            : const Text('Log In'),
+                            : Text(
+                                'Log In',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .displayMedium
+                                    ?.copyWith(
+                                      fontSize: 24,
+                                      color: Color.fromRGBO(234, 228, 221, 1),
+                                    ),
+                              ),
                       ),
                     ),
                   ],
